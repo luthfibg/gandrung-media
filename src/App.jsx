@@ -37,7 +37,7 @@ function App() {
       <header className="sticky top-0 z-40 border-b border-canvas-500/60 bg-canvas-700/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8 lg:py-5">
           <a href="#hero" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-400 via-brand-500 to-brand-700 shadow-soft-xl lg:h-12 lg:w-12">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-brand-400 via-brand-500 to-brand-700 shadow-soft-xl lg:h-12 lg:w-12">
               <span className="text-lg font-bold tracking-tight text-canvas-700 lg:text-xl">TV</span>
             </div>
             <div className="flex flex-col leading-tight">
@@ -66,14 +66,14 @@ function App() {
       <main className="relative overflow-hidden">
         {/* Background glow */}
         <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 flex justify-center">
-          <div className="h-96 w-[900px] rounded-full bg-brand-400/20 blur-[140px]" />
+          <div className="h-96 w-225 rounded-full bg-brand-400/20 blur-[140px]" />
         </div>
 
         {/* ── Hero ── */}
         <section
           id="hero"
           ref={setSectionRef('hero')}
-          className="section-fade border-b border-canvas-500/40 bg-gradient-to-b from-canvas-950/60 via-canvas-700 to-canvas-700"
+          className="section-fade border-b border-canvas-500/40 bg-linear-to-b from-canvas-950/60 via-canvas-700 to-canvas-700"
         >
           <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 px-5 pb-24 pt-16 md:flex-row md:items-start md:pt-20 lg:gap-16 lg:px-8 lg:pb-32 lg:pt-28">
             <div className="flex-1 space-y-6 md:space-y-8 lg:space-y-10">
@@ -84,7 +84,7 @@ function App() {
               <div className="space-y-5 lg:space-y-6">
                 <h1 className="max-w-2xl text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl">
                   Jangkau pengunjung di destinasi terbaik dengan
-                  <span className="bg-gradient-to-r from-brand-300 via-brand-400 to-white bg-clip-text text-transparent"> TVCloud</span>.
+                  <span className="bg-linear-to-r from-brand-300 via-brand-400 to-white bg-clip-text text-transparent"> TVCloud</span>.
                 </h1>
                 <p className="max-w-2xl text-base leading-relaxed text-white/65 lg:text-lg xl:text-xl">
                   TVCloud adalah jaringan iklan digital berbasis cloud milik PT. Gandrung Media Corp
@@ -124,7 +124,7 @@ function App() {
 
             {/* Mockup */}
             <div className="flex-1">
-              <div className="relative mx-auto max-w-lg rounded-3xl border border-canvas-500/70 bg-gradient-to-b from-canvas-800/80 to-canvas-950/90 p-5 shadow-soft-xl lg:p-6">
+              <div className="relative mx-auto max-w-lg rounded-3xl border border-canvas-500/70 bg-linear-to-b from-canvas-800/80 to-canvas-950/90 p-5 shadow-soft-xl lg:p-6">
                 <div className="mb-4 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-xs text-white/50 lg:text-sm">
                     <span className="h-2 w-2 rounded-full bg-red-400" />
@@ -137,7 +137,7 @@ function App() {
                   </span>
                 </div>
                 <div className="relative overflow-hidden rounded-2xl bg-canvas-800/80">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-500/30 via-brand-400/15 to-canvas-950/80" />
+                  <div className="absolute inset-0 bg-linear-to-br from-brand-500/30 via-brand-400/15 to-canvas-950/80" />
                   <div className="relative flex h-72 flex-col justify-between p-5 lg:h-80 lg:p-6">
                     <div className="space-y-2">
                       <p className="text-xs font-medium uppercase tracking-[0.14em] text-white/80 lg:text-sm">
@@ -246,31 +246,52 @@ function App() {
 
             <div className="mt-10 grid gap-5 md:grid-cols-3 lg:mt-12 lg:gap-6">
               {[
-                { name: 'Floating Market Lembang',     city: 'Bandung',         type: 'Wisata Keluarga'       },
-                { name: 'Paskal Food Market',           city: 'Bandung',         type: 'Food Market & Lifestyle' },
-                { name: 'Discovery Mall Bali',          city: 'Kuta, Bali',      type: 'Mall & Tourism Hub'    },
-                { name: 'Plaza Renon Bali',             city: 'Denpasar, Bali',  type: 'Lifestyle Mall'        },
-                { name: 'Perumahan Singgasana Pradana', city: 'Bandung',         type: 'Residential Area'      },
-                { name: 'RSPPN Soedirman',              city: 'Jakarta',         type: 'Rumah Sakit'           },
+                { name: 'Floating Market Lembang',     city: 'Bandung',        type: 'Wisata Keluarga',        img: '/images/venue-floating-market.jpeg'          },
+                { name: 'Paskal Food Market',           city: 'Bandung',        type: 'Food Market & Lifestyle', img: '/images/venue-paskal-foodmarket.jpeg'        },
+                { name: 'Discovery Mall Bali',          city: 'Kuta, Bali',     type: 'Mall & Tourism Hub',     img: '/images/venue-discovery-mall.png'            },
+                { name: 'Plaza Renon Bali',             city: 'Denpasar, Bali', type: 'Lifestyle Mall',         img: '/images/venue-plaza-renon.png'               },
+                { name: 'Perumahan Singgasana Pradana', city: 'Bandung',        type: 'Residential Area',       img: '/images/venue-singgasana-pradana.png'        },
+                { name: 'RSPPN Soedirman',              city: 'Jakarta',        type: 'Rumah Sakit',            img: '/images/venue-rsppn-soedirman-jaksel.png'    },
               ].map((venue) => (
                 <div
                   key={venue.name}
-                  className="group flex flex-col justify-between rounded-2xl border border-canvas-500/60 bg-canvas-800/60 p-5 shadow-soft-xl transition-transform duration-300 hover:-translate-y-1 hover:border-brand-400/70 lg:p-6"
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-canvas-500/60 bg-canvas-800/60 shadow-soft-xl transition-transform duration-300 hover:-translate-y-1 hover:border-brand-400/70"
                 >
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-400 lg:text-sm">
+                  {/* Thumbnail */}
+                  <div className="relative h-48 overflow-hidden lg:h-52">
+                    <img
+                      src={venue.img}
+                      alt={venue.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {/* overlay gradient bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-canvas-950/70 via-transparent to-transparent" />
+                    {/* badge on image */}
+                    <span className="absolute bottom-3 left-3 rounded-full bg-canvas-950/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-400 backdrop-blur-sm lg:text-xs">
                       {venue.type}
-                    </p>
-                    <h4 className="mt-2 text-base font-semibold text-white lg:text-lg">
-                      {venue.name}
-                    </h4>
-                    <p className="mt-1 text-sm text-white/50 lg:text-base">{venue.city}</p>
-                  </div>
-                  <div className="mt-4 flex items-center justify-between text-xs text-white/50 lg:text-sm">
-                    <span>Slot tayang terbatas untuk menjaga eksklusivitas brand.</span>
-                    <span className="rounded-full bg-canvas-600/80 px-3 py-1 text-xs text-brand-300 group-hover:bg-brand-500/20 lg:text-sm">
-                      TVCloud Venue
                     </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col justify-between p-5 lg:p-6">
+                    <div>
+                      <h4 className="text-base font-semibold text-white lg:text-lg">
+                        {venue.name}
+                      </h4>
+                      <p className="mt-1 flex items-center gap-1.5 text-sm text-white/50 lg:text-base">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 shrink-0 text-brand-400" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                        </svg>
+                        {venue.city}
+                      </p>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-xs text-white/40 lg:text-sm">
+                      <span>Slot tayang terbatas.</span>
+                      <span className="rounded-full bg-canvas-600/80 px-3 py-1 text-[10px] font-medium text-brand-300 group-hover:bg-brand-500/20 lg:text-xs">
+                        TVCloud Venue
+                      </span>
+                    </div>
                   </div>
                 </div>
               ))}
