@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand: golden yellow */
+  --color-brand-50:  #fefaed;
+  --color-brand-100: #fdf3d0;
+  --color-brand-200: #fae49e;
+  --color-brand-300: #f6d06b;
+  --color-brand-400: #f2c85b;   /* main yellow */
+  --color-brand-500: #d4a530;   /* button / CTA yellow */
+  --color-brand-600: #a97e1f;
+  --color-brand-700: #7e5d15;
+  --color-brand-800: #53400f;
+  --color-brand-900: #2e240a;
+
+  /* Canvas: warm brown */
+  --color-canvas-950: #1a1210;  /* darkest */
+  --color-canvas-900: #221815;  /* section bg alt */
+  --color-canvas-800: #2a201d;  /* card bg */
+  --color-canvas-700: #302927;  /* main brand brown / body */
+  --color-canvas-600: #3d3330;  /* lighter card */
+  --color-canvas-500: #4a3e3a;  /* borders */
+
+  --shadow-soft-xl: 0 24px 80px rgba(20, 12, 8, 0.65);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-screen antialiased;
+    background-color: #302927;
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .section-fade {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .section-fade-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
